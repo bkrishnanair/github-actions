@@ -17,5 +17,9 @@ class TestSubstring(unittest.TestCase):
         score:float = string_utils.calculate_match_degree("software engineering","building engineering")
         self.assertEqual(score, 0.6)
 
+    def test_no_similarity(self):
+        score: float = string_utils.calculate_match_degree("software engineering", "biology research")
+        self.assertEqual(score, 0.0)
+
 if __name__ == "__main__":
     unittest.main()
